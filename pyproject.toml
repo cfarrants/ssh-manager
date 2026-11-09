@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ssh-manager-terminal"
+version = "0.10.0"
+description = "Terminal SSH connection and key manager"
+requires-python = ">=3.11"
+dependencies = [
+    "cryptography>=46,<47",
+    "dnspython>=2.8,<3",
+    "keyring>=25,<26",
+    "windows-curses>=2.4,<3; sys_platform == 'win32'",
+]
+
+[project.scripts]
+ssh-manager = "ssh_manager.app:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ssh_manager"]
+
+[dependency-groups]
+dev = ["pytest>=8", "pytest-asyncio>=1"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
