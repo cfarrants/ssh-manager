@@ -7,6 +7,10 @@ Terminal SSH connection and key manager. Reads `~/.ssh/config`.
 - Debian/Ubuntu secure setup with recovery rollback
 - Saved account passwords encrypted using the OS keyring
 
+![Connections](docs/screenshots/connections.png)
+
+![Add new server and secure](docs/screenshots/add-secure-connection.png)
+
 ## Install
 
 Requires [uv](https://docs.astral.sh/uv/), OpenSSH and an available OS keyring.
